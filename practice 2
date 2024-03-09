@@ -1,0 +1,17 @@
+# Flip a fair coin 100 times. Calculate the total number of heads and tails, and then check the ratio of the number of heads and the number of tails.Do the same experiment 1000 times.Do the same experiment 10,000 times.Do the same experiment 100,000 times.Do your results get close to the ideal case (the numbers of heads and tails are equal)?
+
+from random import randrange
+lst = [100,1000,10000]
+for experiment in lst:
+    heads = tails = 0 
+    for i in range(experiment):
+        if(randrange(2)== 0 ):
+         heads = heads +1
+        else:
+            tails= tails+1
+    print("heads = ",heads)
+    print("tails = ",tails)
+    print("ratio of heads n tails =", (round(heads/tails,4)))
+
+
+    
