@@ -1,0 +1,11 @@
+Write a function to implement the described biased coin,The inputs are integers N>0 and B∈{0,…,N}.The output is either "Heads" or "Tails". 
+
+Solution:
+
+def biased_coin(N,B):
+    from random import randrange
+    random_number = randrange(N)
+    if random_number < B:
+        return "Heads"
+    else:
+        return "Tails"
