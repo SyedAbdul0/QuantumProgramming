@@ -1,0 +1,15 @@
+#Flip the following biased coin 100 times. Calcuate the total numbers of heads and tails, and then check the ratio of the number of heads and the number of tails.
+# Do the same experiment 1000 times.Do the same experiment 10,000 times.Do the same experiment 100,000 times.
+
+from random import randrange
+for i in [1000,10000,100000]:
+    heads = tails = 0 
+    for iterations in range(i):
+        if(randrange(100)>60):
+            heads = heads+1
+        else:
+            tails= tails+1
+    print("experiment:" ,i)
+    print("heads",heads)
+    print("tails",tails)
+    print("the ratio of heads n tail is : " round(heads/tails,4))
