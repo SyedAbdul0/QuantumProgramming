@@ -1,0 +1,60 @@
+#  Our friend Asiay has one euro and one cent. Both coins are biased, and the probabilities of getting heads and tails are as follows:
+#      one euro: heads with probability $ 0.6 $ and tails with probability $ 0.4 $. 
+#      one cent: heads with probability $ 0.3 $ and tails with probability $ 0.7 $. 
+
+
+# Asiay flips her coins based on the following protocol:  
+#      she starts with flipping one euro[*]; 
+#      whenever she gets heads, she flips one euro in the next round; and, 
+#      whenever she gets tails, she flips one cent in the next round.
+     
+     
+# Suppose that Asja secretly tosses her coins based on the defined protocol.By using python, we can calculate the probabilities of Asja seeing heads and tails after three coin tosses
+
+# initial condition:
+# Asja will start with one euro,
+#    and so, we assume that the probability of having head is 1 at the beginning.
+prob_head = 1
+prob_tail = 0
+
+
+#
+# first coin-flip
+#
+
+# the new probability of head is calculated by using the first row of table
+new_prob_head = prob_head * 0.6 + prob_tail * 0.3
+
+# the new probability of tail is calculated by using the second row of the table
+new_prob_tail = prob_head * 0.4 + prob_tail * 0.7
+
+# update the probabilities for the second round
+prob_head = new_prob_head
+prob_tail = new_prob_tail
+
+#
+# second coin-flip
+#
+# we do the same calculations
+
+new_prob_head = prob_head * 0.6 + prob_tail * 0.3
+new_prob_tail = prob_head * 0.4 + prob_tail * 0.7
+
+prob_head = new_prob_head
+prob_tail = new_prob_tail
+
+#
+# third coin-flip
+#
+# we do the same calculations
+
+new_prob_head = prob_head * 0.6 + prob_tail * 0.3
+new_prob_tail = prob_head * 0.4 + prob_tail * 0.7
+
+prob_head = new_prob_head
+prob_tail = new_prob_tail
+
+# print prob_head and prob_tail
+print("the probability of getting head after 3 coin tosses is",prob_head)
+print("the probability of getting tail after 3 coin tosses is",prob_tail)
+
